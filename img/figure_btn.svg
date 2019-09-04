@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="8" height="8">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+	</style>
+	<g id="01 main">
+		<g id="outline">
+			<g id="scroll down">
+				<g id="иконка">
+					<g id="обычное состояние">
+						<path id="Многоугольник" class="shp0" d="M4 7.01L1 0.99L7.01 0.99L4 7.01Z" />
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

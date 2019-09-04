@@ -16,44 +16,106 @@
 	<meta name="theme-color" content="#000">
 	<!-- css -->
 	<link rel="stylesheet" href="styles/css/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-	<main class="main">
-		<menu class="menu">
+	<main id="app" class="main">
+		<menu id="menu" class="menu">
 			<div class="menu-show">
-				<span class="menu-show-burger"></span>
-				<span class="menu-show__txt">Меню</span>
+				<div @click="openMenu" class="menu-show-btn">
+					<span class="menu-show-burger"><span></span></span>
+					<span :class="{fade: menuShow}" class="menu-show__txt">Меню</span>
+				</div>
+				<transition name="slide">
+					<nav v-if="menuShow == true" class="menu-wrap">
+						<button class="menu__item">Главная</button>
+						<button class="menu__item">Направления</button>
+						<button class="menu__item">Преподаватели</button>
+						<button class="menu__item">Абонементы</button>
+						<button class="menu__item">Расписание</button>
+						<button class="menu__item">Отзывы</button>
+						<button class="menu__item">Контакты</button>
+					</nav>
+				</transition>
 			</div>
-			<nav class="menu-wrap">
-				<button class="menu__item">Главная</button>
-				<button class="menu__item">Направления</button>
-				<button class="menu__item">Преподаватели</button>
-				<button class="menu__item">Абонементы</button>
-				<button class="menu__item">Расписание</button>
-				<button class="menu__item">Отзывы</button>
-				<button class="menu__item">Контакты</button>
-			</nav>
 			<div class="menu-info">
 				<span class="menu-sectname">Добро Пожаловать</span>
 				<span class="menu-number">+7 (812) 345-56-97</span>
 			</div>
 		</menu>
-		<section class="section section--first">
-			<div class="first-content">
-				<div class="row first-content--row align-content-center">
-					<div class="col-6 first-content-item">
-						<img src="img/01.png" alt="">
-					</div>
-					<div class="col-6 first-content-item right">
-						<div class="first-content-logo">
-							<h1>Lotos</h1>
+		<div class="section-bottom">
+			<div class="section-bottom-social">
+				<a href="#/" class="social__link">VK</a>
+				<a href="#/" class="social__link">FB</a>
+				<a href="#/" class="social__link">INST</a>
+			</div>
+			<button class="section-bottom__btn">Направления и классы <div class="btn-img-wrap">
+					<img src="img/figure_btn.svg" alt="">
+				</div></button>
+		</div>
+
+		<div class="section-wrap">
+			<section class="section section--first">
+				<div class="section--first-icon">
+					<img src="img/logo.svg" alt="">
+				</div>
+				<div class="first-content">
+					<div class="row first-content--row align-content-center">
+						<div class="col-6 first-content-item">
+							<img src="img/01.png" alt="">
+						</div>
+						<div class="col-6 first-content-item right">
+							<div class="first-content-logo">
+								<h1><span>Центр йоги</span>Lotos</h1>
+								<p class="first-content-logo-bot"><button class="first-content-logo__btn"><img src="img/+.svg"
+											alt=""></button> Приглашаем вас и ваших друзей <br> на бесплатное пробное занятие</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+			<section class="section section--second">
+				<div class="section--first-icon">
+					<img src="img/logo.svg" alt="">
+				</div>
+				<div class="first-content">
+					<div class="row first-content--row align-content-center">
+						<div class="col-6 first-content-item">
+							<img src="img/01.png" alt="">
+						</div>
+						<div class="col-6 first-content-item right">
+							<div class="first-content-logo">
+								<h1><span>Центр йоги</span>Lotos</h1>
+								<p class="first-content-logo-bot"><button class="first-content-logo__btn"><img src="img/+.svg"
+											alt=""></button> Приглашаем вас и ваших друзей <br> на бесплатное пробное занятие</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section section--third">
+				<div class="section--first-icon">
+					<img src="img/logo.svg" alt="">
+				</div>
+				<div class="first-content">
+					<div class="row first-content--row align-content-center">
+						<div class="col-6 first-content-item">
+							<img src="img/01.png" alt="">
+						</div>
+						<div class="col-6 first-content-item right">
+							<div class="first-content-logo">
+								<h1><span>Центр йоги</span>Lotos</h1>
+								<p class="first-content-logo-bot"><button class="first-content-logo__btn"><img src="img/+.svg"
+											alt=""></button> Приглашаем вас и ваших друзей <br> на бесплатное пробное занятие</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</main>
+	<script src="js/components/menu.js"></script>
 	<script src="js/common.js"></script>
 </body>
 

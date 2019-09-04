@@ -1,0 +1,86 @@
+.menu
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  display: flex
+  justify-content: space-between
+  padding: $padding
+  margin: 0
+  z-index: 1
+  transition: $bezier
+  &-info
+    width: 50%
+    display: flex
+    justify-content: space-between
+  &-show
+    position: relative
+    display: flex
+    flex-direction: column
+
+.menu-show-btn
+  display: flex
+  align-items: center
+  position: relative
+.menu-show__txt
+  transition: $bezier
+  &.fade
+    opacity: 0
+.menu-wrap
+  display: flex
+  flex-direction: column
+  position: absolute
+  align-items: flex-start
+  left: 40px
+  width: 100%
+.menu__item
+  background: transparent
+  border: none
+  margin: 5px 0
+  cursor: pointer
+  transition: $bezier
+  &:hover
+    color: $accent
+.section
+  padding: $padding
+  height: 100vh
+  background-color: $light
+
+.menu-sectname
+  position: relative
+  padding-left: 10px
+  &:before
+    content: ''
+    width: 6px
+    height: 6px
+    background-color: $accent
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    border-radius: 50%
+
+
+.menu-show-burger
+  width: 40px
+  height: 20px
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  cursor: pointer
+  span
+    height: 3px
+    width: 30px
+    background-color: $accent
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    width: 30px
+    height: 3px
+    top: 0
+    background-color: $accent
+  &:after
+    top: inherit
+    bottom: 0
