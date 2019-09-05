@@ -14,6 +14,8 @@ body
   transition: $bezier
 .main
   position: relative
+.section
+  position: relative
 .section-wrap
   transition: $bezier
 .section--first
@@ -28,26 +30,32 @@ body
   align-items: center
   img
     width: 40px
-.first-content
+.section-content
   max-width: 1420px
   height: 100%
   margin: auto
   position: relative
   &--row
     height: 100%
-.first-content-item
+.section-item
   display: flex
   align-items: center
   justify-content: center
   padding: 0 50px
     right: 0
   box-sizing: border-box
-  img
-    width: 100%
-    max-width: 400px
+  height: 100%
   &.right
     padding-left: 0
     justify-content: flex-start
+.main-img-wrap
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+  img
+    max-height: 100%
+    max-width: 400px
 .first-content-logo
   h1
     font-size: 180px
@@ -99,7 +107,7 @@ body
   display: flex
   justify-content: space-between
   align-items: center
-  z-index: 1
+  z-index: 2
   transition: $bezier
 .section-bottom-social
   display: flex
@@ -137,3 +145,24 @@ body
     .btn-img-wrap
       transform: scale(1.2)
 
+.section-right
+  position: fixed
+  right: 0
+  top: 0
+  bottom: 0
+  padding: $padding
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: flex-end
+  z-index: 1
+  &__active
+    font-size: 70px
+    color: #fc65a1
+    font-weight: lighter
+    line-height: 1.2
+  &__all
+    font-size: 35px
+    color: #fc65a1
+    font-weight: lighter
+    line-height: 1

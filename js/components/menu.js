@@ -1,7 +1,7 @@
 let menu = new Vue({
   el: '#menu',
   data: {
-    menuShow: false
+    menuShow: false,
   },
   methods: {
     openMenu() {
