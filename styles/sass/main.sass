@@ -2,38 +2,12 @@
 @import "libs"
 @import "menu"
 @import "anim"
+@import "most"
 
 /////////////////////////////////////////////////////////////
 // main
 /////////////////////////////////////////////////////////////
-body
-  font-family: 'Montserrat', sans-serif
-  margin: 0
-  padding: 0
-  overflow: hidden
-  transition: $bezier
-.main
-  position: relative
-.section
-  position: relative
-.section-wrap
-  transition: .7s ease
-.row
-  display: -webkit-box
-  display: -ms-flexbox
-  display: flex
-  -ms-flex-wrap: wrap
-  flex-wrap: wrap
-  margin-right: -10px
-  margin-left: -10px
-.padding
-  padding: $padding
-  @media (max-width: 1200px)
-    padding: $m-padding
-  @media (max-width: 940px)
-    padding: $s-padding
-  @media (max-width: 600px)
-    padding: 10px
+
 .section--first
   position: relative
 .section--first-icon
@@ -50,14 +24,18 @@ body
     width: 100%
   img
     width: 40px
+
+.section-heading
+  max-width: 350px
 .section-content
   max-width: 1420px
   height: 100%
   margin: auto
   position: relative
   overflow: hidden
+  z-index: 5
   @media (max-width: 1200px)
-    padding: 60px 0
+    padding: 60px 10px
     flex-direction: row-reverse
   &--row
     height: 100%
@@ -153,13 +131,19 @@ body
   align-items: center
   z-index: 2
   transition: $bezier
+  padding-top: 0
   @media (max-width: 1200px)
     width: 50%
     flex-direction: row-reverse
+  @media (max-width: 600px)
+    width: 100%
+    justify-content: center
 .section-bottom-social
   display: flex
   @media (max-width: 1200px)
     transform: translateX(100%)
+  @media (max-width: 600px)
+    transform: translateX(0)
 .social__link
   color: #000
   margin-right: 15px
@@ -179,6 +163,11 @@ body
   cursor: pointer
   color: #000
   transition: $bezier
+  @media (max-width: 600px)
+    position: absolute
+    left: 10px
+    top: 0
+    bottom: 0
   span
     @media (max-width: 1200px)
       display: none
@@ -216,15 +205,21 @@ body
     color: #fc65a1
     font-weight: lighter
     line-height: 1.2
+    @media (max-width: 600px)
+      font-size: 50px
   &__all
     font-size: 35px
     color: #fc65a1
     font-weight: lighter
     line-height: 1
+    @media (max-width: 600px)
+      font-size: 22px
 
 
 .section--second-heading
   max-width: 60%
+  @media (max-width: 1200px)
+    max-width: 100%
   h3
     font-size: 35px
     color: $accent
@@ -237,3 +232,26 @@ body
       color: #000
   .btn-wrap
     margin-top: 60px
+
+.section--second,
+.section--third
+  .section-item:first-child
+    @media (max-width: 600px)
+      display: none
+  .section-item
+    @media (max-width: 600px)
+      height: 100%
+
+.section--third-heading
+  h2
+    font-weight: lighter
+    font-size: 60px
+    color: $accent
+    line-height: .6
+    margin-bottom: 40px
+    span
+      font-size: 30px
+      color: #000
+      font-weight: normal
+      
+

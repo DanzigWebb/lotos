@@ -5,7 +5,7 @@
   width: 100%
   display: flex
   justify-content: space-between
-  
+  align-items: center
   margin: 0
   z-index: 1
   transition: $bezier
@@ -19,7 +19,9 @@
     position: relative
     display: flex
     flex-direction: column
-
+  &-number
+    @media (max-width: 600px)
+      font-size: 13px
 .menu-show-btn
   display: flex
   align-items: center

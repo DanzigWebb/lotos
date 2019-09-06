@@ -1,0 +1,64 @@
+body
+  font-family: 'Montserrat', sans-serif
+  margin: 0
+  padding: 0
+  overflow: hidden
+  transition: $bezier
+.main
+  position: relative
+.section
+  position: relative
+.section-wrap
+  transition: .7s ease
+.row
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-right: -10px
+  margin-left: -10px
+.padding
+  padding: $padding
+  @media (max-width: 1200px)
+    padding: $m-padding
+  @media (max-width: 940px)
+    padding: $s-padding
+  @media (max-width: 600px)
+    padding: 10px
+
+
+.form__input
+  border: none
+    bottom: 1px solid #dedede 
+  background-color: transparent
+  width: 80%
+  height: 40px
+  margin-bottom: 20px
+  outline: none
+.form__submit
+  margin-top: 30px
+
+
+button.email,
+button.plus
+  position: relative
+  cursor: pointer
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    width: 60px
+    border-radius: 50px
+    background-image: url(../../img/mail.svg)
+    background-size: cover
+    z-index: 1
+    transition: $anim
+  &:hover
+    &:before
+      left: calc(100% - 60px)
+.button.plus
+  &:before
+    background-image: url(../../img/plus.svg)

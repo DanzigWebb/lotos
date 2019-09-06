@@ -62,3 +62,5 @@ let scroll = {
 }
 
 scroll.start()
+scroll.count = 2
+scroll.scrollDown()
