@@ -434,11 +434,6 @@ template {
   color: #f78e6a;
 }
 
-.section {
-  height: 100vh;
-  background-color: #fbf5f4;
-}
-
 .menu-sectname {
   position: relative;
   padding-left: 10px;
@@ -551,6 +546,9 @@ body {
 
 .section {
   position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: #fbf5f4;
 }
 
 .section-wrap {
@@ -619,7 +617,7 @@ button.plus:before {
   bottom: 0;
   width: 60px;
   border-radius: 50px;
-  background-image: url(../../img/mail.svg);
+  background-image: url(../../img/mail.png);
   background-size: cover;
   z-index: 1;
   -webkit-transition: all 0.5s ease;
@@ -632,7 +630,7 @@ button.plus:hover:before {
 }
 
 .button.plus:before {
-  background-image: url(../../img/plus.svg);
+  background-image: url(../../img/plus.png);
 }
 
 .section--first {

@@ -11,23 +11,29 @@ let scroll = {
 
 
   start() {
-    this.menuNaming();
-    this.sectNumberContent();
+    this.changeDinamicContent();
     this.btnDawn.addEventListener('click', () => {
-      this.scrollDown()
+      this.scrollBot()
     })
     this.menuControl()
+    this.touchController()
+    this.whellController()
   },
-  scrollDown() {
+  scrollBot() {
     this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
     this.count ++;
+    this.changeDinamicContent()
+  },
+  scrollTop() {
+    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
+    this.count --;
     this.changeDinamicContent()
   },
   menuControl() {
     this.menuLinks.forEach((link, i) => {
       link.addEventListener('click', ()=> {
         this.count = i;
-        this.scrollDown()
+        this.scrollBot()
       })
     })
   },
@@ -58,9 +64,42 @@ let scroll = {
     let el = this.menu.querySelector('.menu-sectname');
     el.innerHTML = content.menu[this.count - 1];
     this.btnDawn.querySelector('span').innerHTML = content.menu[this.count];
+  },
+  // листенеры
+	touchController() {
+		let initialPoint;
+		let finalPoint;
+		document.addEventListener('touchstart', (event) => {
+			initialPoint = event.changedTouches[0];
+		}, false);
+		document.addEventListener('touchend', (event) => {
+			finalPoint = event.changedTouches[0];
+			let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+			let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+			if (xAbs > 30 || yAbs > 30) {
+				if (finalPoint.pageY < initialPoint.pageY) {
+					/*СВАЙП ВВЕРХ*/
+					this.scrollBot()
+				}
+				else {
+					/*СВАЙП ВНИЗ*/
+					this.scrollTop()
+				}
+			}
+		}, false);
+  },
+  whellController() {
+    window.addEventListener('wheel', (e) => {
+			if (e.deltaY > 0 & this.fix) {
+				this.scrollBot();
+			}
+			if (e.deltaY < 0 & this.fix) {
+				this.scrollTop();
+			}
+		})
   }
 }
 
 scroll.start()
 scroll.count = 2
-scroll.scrollDown()
+scroll.scrollBot()

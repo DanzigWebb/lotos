@@ -8,6 +8,9 @@ body
   position: relative
 .section
   position: relative
+  height: 100vh
+  min-height: 100vh
+  background-color: $light
 .section-wrap
   transition: .7s ease
 .row
@@ -52,7 +55,7 @@ button.plus
     bottom: 0
     width: 60px
     border-radius: 50px
-    background-image: url(../../img/mail.svg)
+    background-image: url(../../img/mail.png)
     background-size: cover
     z-index: 1
     transition: $anim
@@ -61,4 +64,4 @@ button.plus
       left: calc(100% - 60px)
 .button.plus
   &:before
-    background-image: url(../../img/plus.svg)
+    background-image: url(../../img/plus.png)
