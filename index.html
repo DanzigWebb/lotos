@@ -21,7 +21,7 @@
 
 <body>
 	<main id="app" class="main">
-		<menu id="menu" class="menu">
+		<menu id="menu" class="menu padding">
 			<div class="menu-show">
 				<div @click="openMenu" class="menu-show-btn">
 					<span class="menu-show-burger"><span></span></span>
@@ -29,13 +29,15 @@
 				</div>
 				<transition name="slide">
 					<nav v-show="menuShow == true" class="menu-wrap">
-						<button class="menu__item">Главная</button>
-						<button class="menu__item">Направления</button>
-						<button class="menu__item">Преподаватели</button>
-						<button class="menu__item">Абонементы</button>
-						<button class="menu__item">Расписание</button>
-						<button class="menu__item">Отзывы</button>
-						<button class="menu__item">Контакты</button>
+						<button @click="openMenu" class="menu__item">Главная</button>
+						<button @click="openMenu" class="menu__item">Направления</button>
+						<button @click="openMenu" class="menu__item">Пробное занятие</button>
+						<button @click="openMenu" class="menu__item">Преподаватели</button>
+						<button @click="openMenu" class="menu__item">Абонементы</button>
+						<button @click="openMenu" class="menu__item">Расписание</button>
+						<button @click="openMenu" class="menu__item">Отзывы</button>
+						<button @click="openMenu" class="menu__item">Акции</button>
+						<button @click="openMenu" class="menu__item">Контакты</button>
 					</nav>
 				</transition>
 			</div>
@@ -44,7 +46,7 @@
 				<span class="menu-number">+7 (812) 345-56-97</span>
 			</div>
 		</menu>
-		<div class="section-bottom">
+		<div class="section-bottom padding">
 			<div class="section-bottom-social">
 				<a href="#/" class="social__link">VK</a>
 				<a href="#/" class="social__link">FB</a>
@@ -56,47 +58,75 @@
 				</div>
 			</button>
 		</div>
-		<div class="section-right">
-			<span class="section-right__active"></span>
-			<span class="section-right__all"></span>
+		<div class="section-number padding">
+			<span class="section-number__active"></span>
+			<span class="section-number__all"></span>
 		</div>
 		<div class="section-wrap">
-			<section class="section section--first">
-				<div class="section--first-icon">
+			<section class="section section--first padding">
+				<div class="section--first-icon padding">
 					<img src="img/logo.svg" alt="">
 				</div>
 				<div class="section-content row first-content--row align-content-center">
-						<div class="col-6 section-item">
-							<div class="main-img-wrap">
-								<img src="img/01.png" alt="">
-							</div>
+					<div class="section-item">
+						<div class="main-img-wrap">
+							<img src="img/01.png" alt="">
 						</div>
-						<div class="col-6 section-item right">
-							<div class="first-content-logo">
-								<h1><span>Центр йоги</span>Lotos</h1>
-								<p class="first-content-logo-bot"><button class="first-content-logo__btn"><img src="img/+.svg"
-											alt=""></button> Приглашаем вас и ваших друзей <br> на бесплатное пробное занятие</p>
-							</div>
+					</div>
+					<div class="section-item content">
+						<div class="first-content-logo">
+							<img class="main-logo__img" src="img/main-logo.png" alt="">
+							<p class="first-content-logo-bot">
+								<button class="first-content-logo__btn">
+									<img src="img/+.svg" alt="">
+								</button>
+								<span>Приглашаем вас и ваших друзей на бесплатное пробное занятие<span></p>
 						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section section--second padding">
+				<div class="section--first-icon padding">
+					<img src="img/logo.svg" alt="">
+				</div>
+				<div class="section-content row first-content--row align-content-center">
+					<div class="section-item">
+						<div class="main-img-wrap">
+							<img src="img/02.png" alt="">
+						</div>
+					</div>
+					<div class="section-item content">
+						<div class="section--second-heading">
+							<h3>Yoga —<span>Для начинающих</span></h3>
+							<p>Йога для начинающих рассчитана на тех, кто до этого никогда ей не занимался и требует обучения. Такой
+								программный комплекс существует и в нашем центре.</p>
+							<p>Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются
+								йогой и придерживаются здорового образа жизни.</p>
+							<div class="btn-wrap"><button class="btn__popup">Записаться онлайн</button></div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<section class="section section--second">
-				<div class="section--first-icon">
+				<div class="section--first-icon padding">
 					<img src="img/logo.svg" alt="">
 				</div>
 				<div class="section-content row first-content--row align-content-center">
-						<div class="col-6 section-item">
-							<div class="main-img-wrap">
-								<img src="img/02.png" alt="">
-							</div>
+					<div class="section-item">
+						<div class="main-img-wrap">
+							<img src="img/03.png" alt="">
 						</div>
-						<div class="col-6 section-item right">
-							<div class="first-content-logo">
-								<h1><span>Центр йоги</span>Lotos</h1>
-								<p class="first-content-logo-bot"><button class="first-content-logo__btn"><img src="img/+.svg"
-											alt=""></button> Приглашаем вас и ваших друзей <br> на бесплатное пробное занятие</p>
-							</div>
+					</div>
+					<div class="section-item content">
+						<div class="section--second-heading">
+							<h3>Yoga —<span>Для начинающих</span></h3>
+							<p>Йога для начинающих рассчитана на тех, кто до этого никогда ей не занимался и требует обучения. Такой
+								программный комплекс существует и в нашем центре.</p>
+							<p>Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются
+								йогой и придерживаются здорового образа жизни.</p>
+							<div class="btn-wrap"><button class="btn__popup">Записаться онлайн</button></div>
 						</div>
+					</div>
 				</div>
 			</section>
 

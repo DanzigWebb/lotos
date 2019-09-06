@@ -17,17 +17,37 @@ body
 .section
   position: relative
 .section-wrap
-  transition: $bezier
+  transition: .7s ease
+.row
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-right: -10px
+  margin-left: -10px
+.padding
+  padding: $padding
+  @media (max-width: 1200px)
+    padding: $m-padding
+  @media (max-width: 940px)
+    padding: $s-padding
+  @media (max-width: 600px)
+    padding: 10px
 .section--first
   position: relative
 .section--first-icon
   position: absolute
   left: 0
-  padding: $padding
   top: 0
   bottom: 0
   display: flex
   align-items: center
+  @media (max-width: 1200px)
+    bottom: inherit
+    left: 0
+    justify-content: center
+    width: 100%
   img
     width: 40px
 .section-content
@@ -35,6 +55,10 @@ body
   height: 100%
   margin: auto
   position: relative
+  overflow: hidden
+  @media (max-width: 1200px)
+    padding: 60px 0
+    flex-direction: row-reverse
   &--row
     height: 100%
 .section-item
@@ -45,43 +69,60 @@ body
     right: 0
   box-sizing: border-box
   height: 100%
-  &.right
+  width: 50%
+  @media (max-width: 768px)
+    width: 40%
+    padding: 0
+  @media (max-width: 600px)
+    width: 100%
+    height: 40%
+  &.content
     padding-left: 0
     justify-content: flex-start
+    @media (max-width: 768px)
+      width: 60%
+    @media (max-width: 600px)
+      width: 100%
+      height: 60%
 .main-img-wrap
   display: flex
   align-items: center
   justify-content: center
   height: 100%
+  position: relative
+  @media (max-width: 1200px)
+    transform: scale(-1, 1)
+  @media (max-width: 600px)
+    transform: scale(1)
   img
     max-height: 100%
     max-width: 400px
+    @media (max-width: 1200px)
+      max-width: 350px
+    @media (max-width: 768px)
+      width: 100%
+    @media (max-width: 600px)
+      height: 100%
+      width: auto
 .first-content-logo
-  h1
-    font-size: 180px
-    color: $accent
-    position: relative
-    line-height: 1
-    margin-left: 10px
-    font-weight: lighter
-    span
-      position: absolute
-      left: -65px
-      bottom: -52px
-      font-size: 20px
-      letter-spacing: 1px
-      font-weight: lighter
-      transform: rotate(-90deg) translateX(100%)
-
-
-
+  @media (max-width: 600px)
+    width: 100%
+.main-logo__img
+  width: 100%
+  max-width: 400px
+  margin-bottom: 20px
 .first-content-logo-bot
-  display: flex
-  justify-content: flex-start
-  align-items: center
   padding: 10px 0
-.first-content-logo__btn
   display: flex
+  align-items: center
+  position: relative
+  span
+    max-width: 340px
+    margin-left: 80px
+    @media (max-width: 768px)
+      width: 300px
+.first-content-logo__btn
+  display: inline-flex
   align-items: center
   justify-content: center
   width: 60px
@@ -89,9 +130,13 @@ body
   border-radius: 50%
   background: linear-gradient(0deg, $accent, #fc65a1 100%)
   transition: $bezier
-  margin-right: 20px
   border: none
   cursor: pointer
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  margin: auto
   &:hover
     transform: scale(1.2)
   img
@@ -102,15 +147,19 @@ body
   position: fixed
   bottom: 0
   left: 0
-  padding: $padding
   width: 100%
   display: flex
   justify-content: space-between
   align-items: center
   z-index: 2
   transition: $bezier
+  @media (max-width: 1200px)
+    width: 50%
+    flex-direction: row-reverse
 .section-bottom-social
   display: flex
+  @media (max-width: 1200px)
+    transform: translateX(100%)
 .social__link
   color: #000
   margin-right: 15px
@@ -130,6 +179,9 @@ body
   cursor: pointer
   color: #000
   transition: $bezier
+  span
+    @media (max-width: 1200px)
+      display: none
   .btn-img-wrap
     width: 30px
     height: 30px
@@ -141,21 +193,24 @@ body
     margin-left: 10px
     background: linear-gradient(0deg, $accent, #fc65a1 100%)
     transition: $bezier
+    @media (max-width: 1200px)
+      margin: 0
   &:hover
     .btn-img-wrap
       transform: scale(1.2)
 
-.section-right
+.section-number
   position: fixed
   right: 0
   top: 0
   bottom: 0
-  padding: $padding
   display: flex
   justify-content: center
   flex-direction: column
   align-items: flex-end
   z-index: 1
+  @media (max-width: 1200px)
+    top: inherit
   &__active
     font-size: 70px
     color: #fc65a1
@@ -166,3 +221,19 @@ body
     color: #fc65a1
     font-weight: lighter
     line-height: 1
+
+
+.section--second-heading
+  max-width: 60%
+  h3
+    font-size: 35px
+    color: $accent
+    font-weight: lighter
+    margin-bottom: 40px
+    span
+      font-size: 16px
+      font-weight: normal
+      display: block
+      color: #000
+  .btn-wrap
+    margin-top: 60px
