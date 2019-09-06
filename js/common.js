@@ -2,13 +2,12 @@ let scroll = {
   sectWrap: document.querySelector('.section-wrap'),
   step: document.querySelector('.section').scrollHeight,
   btnDawn: document.querySelector('.section-bottom__btn'),
-
   menu: document.querySelector('#menu'),
   menuLinks: document.querySelectorAll('.menu__item'),
   sectBottom: document.querySelector('.section-bottom'),
 
   count: 0,
-
+  fix: true,
 
   start() {
     this.changeDinamicContent();
@@ -20,17 +19,22 @@ let scroll = {
     this.whellController()
   },
   scrollBot() {
-    this.count ++;
+    this.fix = false;
+    this.count == this.sectWrap.children.length - 1 ? this.count = 0 : this.count ++
     this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
-    
     this.changeDinamicContent()
-    console.log(this.count)
+    setTimeout(() => {
+      this.fix = true
+    }, 600);
   },
   scrollTop() {
-    this.count --;
+    this.fix = false;
+    this.count == 0 ? this.count = this.sectWrap.children.length - 1 : this.count --
     this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
     this.changeDinamicContent()
-    console.log(this.count)
+    setTimeout(() => {
+      this.fix = true
+    }, 600);
   },
   menuControl() {
     this.menuLinks.forEach((link, i) => {
@@ -58,7 +62,7 @@ let scroll = {
     let activeSlide = document.querySelector('.section-number__active');
     let allSlide = document.querySelector('.section-number__all');
     activeSlide.innerHTML = ("0"+(this.count + 1)).slice(-2);
-    allSlide.innerHTML = ("- 0"+this.sectWrap.children.length);
+    allSlide.innerHTML = ("- 0"+ this.sectWrap.children.length);
   },
   menuNaming() { // Именование слайдов
     let content = { 
@@ -104,5 +108,3 @@ let scroll = {
 }
 
 scroll.start()
-// scroll.count = 2
-// scroll.scrollBot()
