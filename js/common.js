@@ -7,7 +7,7 @@ let scroll = {
   menuLinks: document.querySelectorAll('.menu__item'),
   sectBottom: document.querySelector('.section-bottom'),
 
-  count: 1,
+  count: 0,
 
 
   start() {
@@ -20,14 +20,17 @@ let scroll = {
     this.whellController()
   },
   scrollBot() {
-    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
     this.count ++;
+    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
+    
     this.changeDinamicContent()
+    console.log(this.count)
   },
   scrollTop() {
-    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
     this.count --;
+    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
     this.changeDinamicContent()
+    console.log(this.count)
   },
   menuControl() {
     this.menuLinks.forEach((link, i) => {
@@ -54,7 +57,7 @@ let scroll = {
   sectNumberContent() { // Нумеровка слайдов
     let activeSlide = document.querySelector('.section-number__active');
     let allSlide = document.querySelector('.section-number__all');
-    activeSlide.innerHTML = ("0"+this.count).slice(-2);
+    activeSlide.innerHTML = ("0"+(this.count + 1)).slice(-2);
     allSlide.innerHTML = ("- 0"+this.sectWrap.children.length);
   },
   menuNaming() { // Именование слайдов
@@ -62,8 +65,8 @@ let scroll = {
       menu: ['Добро пожаловать', 'Направления и классы', 'Пробное занятие', 'Преподаватели', 'Абонементы', 'Расписание', 'Отзывы', 'Акции', 'Контакты', 'Вернуться'],
     };
     let el = this.menu.querySelector('.menu-sectname');
-    el.innerHTML = content.menu[this.count - 1];
-    this.btnDawn.querySelector('span').innerHTML = content.menu[this.count];
+    el.innerHTML = content.menu[this.count];
+    this.btnDawn.querySelector('span').innerHTML = content.menu[this.count + 1];
   },
   // листенеры
 	touchController() {
@@ -101,5 +104,5 @@ let scroll = {
 }
 
 scroll.start()
-scroll.count = 2
-scroll.scrollBot()
+// scroll.count = 2
+// scroll.scrollBot()
