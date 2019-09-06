@@ -83,7 +83,7 @@ let scroll = {
 			finalPoint = event.changedTouches[0];
 			let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
 			let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-			if (xAbs > 30 || yAbs > 30) {
+			if (xAbs > 30) {
 				if (finalPoint.pageY < initialPoint.pageY) {
 					/*СВАЙП ВВЕРХ*/
 					this.scrollBot()
