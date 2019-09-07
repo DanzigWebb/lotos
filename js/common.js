@@ -2,7 +2,9 @@ let mySwiper = new Swiper('.swiper-container', {
   // Optional parameters
   direction: 'vertical',
   // loop: true,
-
+  mousewheel: {
+    invert: false,
+  },
 })
 
 let scroll = {
