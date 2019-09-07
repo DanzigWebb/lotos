@@ -1,6 +1,12 @@
+let mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  // loop: true,
+
+})
+
 let scroll = {
   sectWrap: document.querySelector('.section-wrap'),
-  step: document.querySelector('.section').scrollHeight,
   btnDawn: document.querySelector('.section-bottom__btn'),
   menu: document.querySelector('#menu'),
   menuLinks: document.querySelectorAll('.menu__item'),
@@ -11,42 +17,21 @@ let scroll = {
 
   start() {
     this.changeDinamicContent();
-    this.btnDawn.addEventListener('click', () => {
-      this.scrollBot()
+    this.btnDawn.addEventListener('click', ()=> {
+      mySwiper.slideNext()
     })
-    this.menuControl()
-    this.touchController()
-    this.whellController()
-  },
-  scrollBot() {
-    this.fix = false;
-    this.count == this.sectWrap.children.length - 1 ? this.count = 0 : this.count ++
-    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
-    this.changeDinamicContent()
-    setTimeout(() => {
-      this.fix = true
-    }, 600);
-  },
-  scrollTop() {
-    this.fix = false;
-    this.count == 0 ? this.count = this.sectWrap.children.length - 1 : this.count --
-    this.sectWrap.style.transform = `translateY(-${this.count * this.step}px)`;
-    this.changeDinamicContent()
-    setTimeout(() => {
-      this.fix = true
-    }, 600);
-  },
-  menuControl() {
-    this.menuLinks.forEach((link, i) => {
-      link.addEventListener('click', ()=> {
-        this.count = i;
-        this.scrollBot()
+    mySwiper.on('slideChange', () => {
+      this.changeDinamicContent();
+    });
+    this.menuLinks.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        mySwiper.slideTo(i)
       })
-    })
+    });
   },
 
   changeDinamicContent() {
-    this.fadeFixedEl();
+    // this.fadeFixedEl();
     this.sectNumberContent();
     this.menuNaming();
   },
@@ -61,50 +46,18 @@ let scroll = {
   sectNumberContent() { // Нумеровка слайдов
     let activeSlide = document.querySelector('.section-number__active');
     let allSlide = document.querySelector('.section-number__all');
-    activeSlide.innerHTML = ("0"+(this.count + 1)).slice(-2);
-    allSlide.innerHTML = ("- 0"+ this.sectWrap.children.length);
+    activeSlide.innerHTML = ("0" + (mySwiper.activeIndex + 1)).slice(-2);
+    allSlide.innerHTML = ("- 0" + mySwiper.slides.length);
   },
   menuNaming() { // Именование слайдов
-    let content = { 
+    let content = {
       menu: ['Добро пожаловать', 'Направления и классы', 'Пробное занятие', 'Преподаватели', 'Абонементы', 'Расписание', 'Отзывы', 'Акции', 'Контакты', 'Вернуться'],
     };
     let el = this.menu.querySelector('.menu-sectname');
-    el.innerHTML = content.menu[this.count];
-    this.btnDawn.querySelector('span').innerHTML = content.menu[this.count + 1];
+    el.innerHTML = content.menu[mySwiper.activeIndex];
+    this.btnDawn.querySelector('span').innerHTML = content.menu[mySwiper.activeIndex + 1];
   },
-  // листенеры
-	touchController() {
-		let initialPoint;
-		let finalPoint;
-		document.addEventListener('touchstart', (event) => {
-			initialPoint = event.changedTouches[0];
-		}, false);
-		document.addEventListener('touchend', (event) => {
-			finalPoint = event.changedTouches[0];
-			let xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-			let yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-			if (xAbs > 30) {
-				if (finalPoint.pageY < initialPoint.pageY) {
-					/*СВАЙП ВВЕРХ*/
-					this.scrollBot()
-				}
-				else {
-					/*СВАЙП ВНИЗ*/
-					this.scrollTop()
-				}
-			}
-		}, false);
-  },
-  whellController() {
-    window.addEventListener('wheel', (e) => {
-			if (e.deltaY > 0 & this.fix) {
-				this.scrollBot();
-			}
-			if (e.deltaY < 0 & this.fix) {
-				this.scrollTop();
-			}
-		})
-  }
+
 }
 
 scroll.start()

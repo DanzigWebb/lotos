@@ -17,6 +17,9 @@
 	<!-- css -->
 	<link rel="stylesheet" href="styles/css/main.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -62,73 +65,77 @@
 			<span class="section-number__active"></span>
 			<span class="section-number__all"></span>
 		</div>
-		<div class="section-wrap">
-			<section class="section section--first padding">
-				<div class="section--first-icon padding">
-					<img src="img/logo.svg" alt="">
-				</div>
-				<div class="section-content row first-content--row align-content-center">
-					<div class="section-item">
-						<div class="main-img-wrap">
-							<img src="img/01.png" alt="">
-						</div>
-					</div>
-					<div class="section-item content">
-						<div class="first-content-logo">
-							<img class="main-logo__img" src="img/main-logo.png" alt="">
-							<p class="first-content-logo-bot">
-								<button class="first-content-logo__btn">
-									<img src="img/+.svg" alt="">
-								</button>
-								<span>Приглашаем вас и ваших друзей на бесплатное пробное занятие<span></p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section section--second padding">
-				<div class="section--first-icon padding">
-					<img src="img/logo.svg" alt="">
-				</div>
-				<div class="section-content row first-content--row align-content-center">
-					<div class="section-item">
-						<div class="main-img-wrap">
-							<img src="img/02.png" alt="">
-						</div>
-					</div>
-					<div class="section-item content">
-						<div class="section--second-heading">
-							<h3>Yoga —<span>Для начинающих</span></h3>
-							<p>Йога для начинающих рассчитана на тех, кто до этого никогда ей не занимался и требует обучения. Такой
-								программный комплекс существует и в нашем центре.</p>
-							<p>Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются
-								йогой и придерживаются здорового образа жизни.</p>
-							<div class="btn-wrap"><button class="btn__popup plus">Записаться онлайн</button></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section section--third padding">
-				<div class="section--first-icon padding">
-					<img src="img/logo.svg" alt="">
-				</div>
-				<div class="section-content row first-content--row align-content-center">
-					<div class="section-item">
-						<div class="main-img-wrap">
-							<img src="img/03.png" alt="">
-						</div>
-					</div>
-					<div class="section-item content">
-						<div class="section-heading section--third-heading">
-							<h2>10% <span>скидка <br>на абонемент</span></h2>
-							<p>Мы сделаем для вас 10% скидку на абонемент, купленный в день по</p>
 
-								<div class="btn-wrap"><button type="submit" class="form__submit btn__popup email">Отправить заявку</button></div>
-
+		<div class="swiper-container">
+			<div class="swiper-wrapper section-wrap">
+				<section class="swiper-slide section section--first padding">
+					<div class="section--first-icon padding">
+						<img src="img/logo.svg" alt="">
+					</div>
+					<div class="section-content row first-content--row align-content-center">
+						<div class="section-item">
+							<div class="main-img-wrap">
+								<img src="img/01.png" alt="">
+							</div>
+						</div>
+						<div class="section-item content">
+							<div class="first-content-logo">
+								<img class="main-logo__img" src="img/main-logo.png" alt="">
+								<p class="first-content-logo-bot">
+									<button class="first-content-logo__btn">
+										<img src="img/+.svg" alt="">
+									</button>
+									<span>Приглашаем вас и ваших друзей на бесплатное пробное занятие<span></p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+				<section class="swiper-slide section section--second padding">
+					<div class="section--first-icon padding">
+						<img src="img/logo.svg" alt="">
+					</div>
+					<div class="section-content row first-content--row align-content-center">
+						<div class="section-item">
+							<div class="main-img-wrap">
+								<img src="img/02.png" alt="">
+							</div>
+						</div>
+						<div class="section-item content">
+							<div class="section--second-heading">
+								<h3>Yoga —<span>Для начинающих</span></h3>
+								<p>Йога для начинающих рассчитана на тех, кто до этого никогда ей не занимался и требует обучения. Такой
+									программный комплекс существует и в нашем центре.</p>
+								<p>Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются
+									йогой и придерживаются здорового образа жизни.</p>
+								<div class="btn-wrap"><button class="btn__popup plus">Записаться онлайн</button></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="swiper-slide section section--third padding">
+					<div class="section--first-icon padding">
+						<img src="img/logo.svg" alt="">
+					</div>
+					<div class="section-content row first-content--row align-content-center">
+						<div class="section-item">
+							<div class="main-img-wrap">
+								<img src="img/03.png" alt="">
+							</div>
+						</div>
+						<div class="section-item content">
+							<div class="section-heading section--third-heading">
+								<h2>10% <span>скидка <br>на абонемент</span></h2>
+								<p>Мы сделаем для вас 10% скидку на абонемент, купленный в день по</p>
 
+								<div class="btn-wrap"><button type="submit" class="form__submit btn__popup email">Отправить
+										заявку</button></div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
 		</div>
 	</main>
 	<script src="js/components/menu.js"></script>
