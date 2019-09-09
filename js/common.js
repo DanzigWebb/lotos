@@ -19,7 +19,7 @@ let scroll = {
     this.changeDinamicContent();
     this.addActiveBtn()
     this.btnDawn.addEventListener('click', ()=> {
-      mySwiper.slideNext()
+      mySwiper.activeIndex == mySwiper.slides.length - 1 ? mySwiper.slideTo(0) : mySwiper.slideNext()
     })
     mySwiper.on('slideChange', () => {
       this.changeDinamicContent();
@@ -62,7 +62,7 @@ let scroll = {
   },
   menuNaming() { // Именование слайдов
     let content = {
-      menu: ['Добро пожаловать', 'Направления и классы', 'Пробное занятие', 'Преподаватели', 'Абонементы', 'Расписание', 'Отзывы', 'Акции', 'Контакты', 'Вернуться'],
+      menu: ['Добро пожаловать', 'Направления и классы', 'Акции', 'Контакты', 'Наверх', 'Расписание', 'Отзывы', 'Акции', 'Контакты', 'Вернуться'],
     };
     let el = this.menu.querySelector('.menu-sectname');
     el.innerHTML = content.menu[mySwiper.activeIndex];

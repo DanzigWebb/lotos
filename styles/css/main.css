@@ -1130,14 +1130,16 @@ html {
 
 @media (max-width: 600px) {
   .section--second .section-item:first-child,
-  .section--third .section-item:first-child {
+  .section--third .section-item:first-child,
+  .section--map .section-item:first-child {
     display: none;
   }
 }
 
 @media (max-width: 600px) {
   .section--second .section-item,
-  .section--third .section-item {
+  .section--third .section-item,
+  .section--map .section-item {
     height: 100%;
   }
 }
