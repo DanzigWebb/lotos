@@ -63,3 +63,4 @@ let scroll = {
 }
 
 scroll.start()
+mySwiper.slideTo(3)
