@@ -72,4 +72,4 @@ let scroll = {
 }
 
 scroll.start()
-mySwiper.slideTo(3)
+// mySwiper.slideTo(3)

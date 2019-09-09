@@ -16,4 +16,4 @@ let menu = new Vue({
   }
 })
 
-menu.menuShow = true
+// menu.menuShow = true
