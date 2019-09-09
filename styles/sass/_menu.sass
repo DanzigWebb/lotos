@@ -7,7 +7,7 @@
   justify-content: space-between
   align-items: center
   margin: 0
-  z-index: 3
+  z-index: 5
   transition: $bezier
   &-info
     width: 50%
@@ -30,22 +30,43 @@
   transition: $bezier
   &.fade
     opacity: 0
+
 .menu-wrap
   display: flex
   flex-direction: column
-  position: absolute
-  align-items: flex-start
-  left: 50px
+  position: fixed
+  align-items: center
+  justify-content: center
+  left: -15px
+  top: 0
+  height: 100vh
+  background-color: #f9efed
   width: 260px
+  z-index: 10
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.65)
+.menu-overlay
+  position: fixed
+  z-index: -1
+  left: 0
+  top: 0
+  height: 100%
+  width: 100%
+
+  background-color: rgba(0, 0, 0, 0.5)
+  @media (min-width: 480px)
+    display: none
 .menu__item
   background: transparent
   border: none
-  margin: 5px 0
+  padding: 8px 0
+  margin: 3px 0
   cursor: pointer
   transition: $bezier
+  border-right: 4px solid transparent
+  width: 100%
   &:hover
-    color: $accent
-
+  &.active
+    border-right: 4px solid $accent
 
 .menu-sectname
   position: relative

@@ -31,7 +31,7 @@
 					<span :class="{fade: menuShow}" class="menu-show__txt">Меню</span>
 				</div>
 				<transition name="slide">
-					<nav v-show="menuShow == true" class="menu-wrap">
+					<nav ref="menuContent" v-show="menuShow == true" class="menu-wrap">
 						<button @click="openMenu" class="menu__item">Главная</button>
 						<button @click="openMenu" class="menu__item">Направления</button>
 						<button @click="openMenu" class="menu__item">Пробное занятие</button>
@@ -41,7 +41,12 @@
 						<button @click="openMenu" class="menu__item">Отзывы</button>
 						<button @click="openMenu" class="menu__item">Акции</button>
 						<button @click="openMenu" class="menu__item">Контакты</button>
+						
 					</nav>
+					
+				</transition>
+				<transition name="fade">
+					<div v-if="menuShow == true" @click="openMenu" class="menu-overlay"></div>
 				</transition>
 			</div>
 			<div class="menu-info">
@@ -66,7 +71,7 @@
 			<span class="section-number__all"></span>
 		</div>
 
-		<div class="swiper-container">
+		<div class="swiper-container main-content">
 			<div class="swiper-wrapper section-wrap">
 				<section class="swiper-slide section section--first padding">
 					<div class="section--first-icon padding">

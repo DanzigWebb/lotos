@@ -19,19 +19,28 @@ let scroll = {
 
   start() {
     this.changeDinamicContent();
+    this.addActiveBtn()
     this.btnDawn.addEventListener('click', ()=> {
       mySwiper.slideNext()
     })
     mySwiper.on('slideChange', () => {
       this.changeDinamicContent();
+      this.addActiveBtn();
+      menu.menuShow = false
     });
     this.menuLinks.forEach((btn, i) => {
       btn.addEventListener('click', () => {
-        mySwiper.slideTo(i)
+        mySwiper.slideTo(i);
+        this.addActiveBtn()
       })
     });
   },
-
+  addActiveBtn() {
+    this.menuLinks.forEach((btn, i) => {
+      btn.classList.remove('active');
+      this.menuLinks[mySwiper.activeIndex].classList.add('active')
+    })
+  },
   changeDinamicContent() {
     // this.fadeFixedEl();
     this.sectNumberContent();
