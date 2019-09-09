@@ -2,20 +2,18 @@ let mySwiper = new Swiper('.swiper-container', {
   // Optional parameters
   direction: 'vertical',
   // loop: true,
+  observer: true,
   mousewheel: {
     invert: false,
   },
 })
 
 let scroll = {
-  sectWrap: document.querySelector('.section-wrap'),
   btnDawn: document.querySelector('.section-bottom__btn'),
   menu: document.querySelector('#menu'),
   menuLinks: document.querySelectorAll('.menu__item'),
   sectBottom: document.querySelector('.section-bottom'),
 
-  count: 0,
-  fix: true,
 
   start() {
     this.changeDinamicContent();
@@ -46,6 +44,7 @@ let scroll = {
     this.sectNumberContent();
     this.menuNaming();
   },
+
   fadeFixedEl() { // Скрытие фиксированных блоков при пролистывании слайда
     this.menu.classList.add('fixed-hide');
     this.sectBottom.classList.add('fixed-hide');
@@ -54,6 +53,7 @@ let scroll = {
       this.sectBottom.classList.remove('fixed-hide');
     }, 600);
   },
+
   sectNumberContent() { // Нумеровка слайдов
     let activeSlide = document.querySelector('.section-number__active');
     let allSlide = document.querySelector('.section-number__all');
@@ -72,4 +72,4 @@ let scroll = {
 }
 
 scroll.start()
-// mySwiper.slideTo(3)
+mySwiper.slideTo(4)

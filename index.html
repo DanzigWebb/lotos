@@ -16,9 +16,9 @@
 	<meta name="theme-color" content="#000">
 	<!-- css -->
 	<link rel="stylesheet" href="styles/css/main.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<!-- scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 </head>
 
@@ -41,9 +41,7 @@
 						<button @click="openMenu" class="menu__item">Отзывы</button>
 						<button @click="openMenu" class="menu__item">Акции</button>
 						<button @click="openMenu" class="menu__item">Контакты</button>
-						
 					</nav>
-					
 				</transition>
 				<transition name="fade">
 					<div v-if="menuShow == true" @click="openMenu" class="menu-overlay"></div>
@@ -132,13 +130,37 @@
 								<h2>10% <span>скидка <br>на абонемент</span></h2>
 								<p>Мы сделаем для вас 10% скидку на абонемент,
 									купленный в день посещения вводного занятия.</p>
-								<fprm class="section-form">
+								<form class="section-form">
 									<input type="text" class="form__input" placeholder="Ваше имя">
 									<input type="text" class="form__input" placeholder="Ваш телефон">
 									<div class="btn-wrap"><button type="submit" class="form__submit btn__popup email">Отправить
 											заявку</button></div>
-											<p class="section-form__policy">Нажимая «Отправить заявку», вы даете <span>согласие</span> <br> на обработку своих персональных данных</p>
-								</fprm>
+									<p class="section-form__policy">Нажимая «Отправить заявку», вы даете <span>согласие</span> <br> на
+										обработку своих персональных данных</p>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="swiper-slide section section--map padding">
+					<div class="section--first-icon padding">
+						<img src="img/logo.svg" alt="">
+					</div>
+					<div class="section-content row first-content--row align-content-center">
+						<div class="section-item">
+							<div class="main-img-wrap">
+								<img src="img/map.jpg" alt="">
+							</div>
+						</div>
+						<div class="section-item content">
+							<div class="section-heading section--third-heading">
+								<p class="section--map__adr"><span>Адрес:</span>  СПб, Невский проспект 108</p>
+								<p class="section--map__adr"><span>Email:</span>  <a href="mailto:Lotos-yoga@gmail.com">Lotos-yoga@gmail.com</a></p>
+								<li class="section--map__icon"><img src="img/adr.png" alt="">Смотреть на карте</li>
+								<li class="section--map__icon"><img src="img/adr_mail.png" alt="">Оставить отзыв</li>
+									<div class="btn-wrap"><button class="btn__popup email">Отправить
+											заявку</button></div>
 
 							</div>
 						</div>
